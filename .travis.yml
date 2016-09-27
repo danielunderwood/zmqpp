@@ -40,7 +40,6 @@ install:
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get install -q -y libboost-all-dev; fi
 
   # Install dependencies for OS X
-  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install cmake; fi
 
 script:
   - ./travis.sh
