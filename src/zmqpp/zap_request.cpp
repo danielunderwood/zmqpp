@@ -23,6 +23,7 @@
 
 #ifdef _WIN32
 #include <WinSock2.h>
+#include <iterator>
 #else
 #include <netinet/in.h>
 #endif
