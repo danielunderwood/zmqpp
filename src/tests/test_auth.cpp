@@ -20,7 +20,12 @@
 #include "zmqpp/auth.hpp"
 #include <iostream>
 #include <string>
+
+#ifdef _WIN32
+#include <WinSock2.h>
+#else
 #include <netinet/in.h>
+#endif
 
 BOOST_AUTO_TEST_SUITE( auth )
 
