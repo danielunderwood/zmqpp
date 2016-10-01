@@ -40,6 +40,7 @@ install:
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get install -q -y libboost-all-dev; fi
 
   # Install dependencies for OS X
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install gnu-sed --with-default-names; fi
 
 script:
   - ./travis.sh
