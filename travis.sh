@@ -14,7 +14,10 @@ if [ -n ${WITH_LIBSODIUM} ]; then
 	./configure
 	make check || echo ${Red}"Warning: Libsodium tests failed. The build will continue but may fail."${RCol}
 	sudo make install
-	sudo ldconfig
+
+	if [ ${TRAVIS_OS_NAME} == "linux" ]; then
+	    sudo ldconfig
+	fi
     )    
 fi
 
@@ -30,7 +33,10 @@ git clone git://github.com/zeromq/${ZMQ_REPO}.git;
     fi
     make check || echo ${Red}"Warning: ZeroMQ tests failed. The build will continue but may fail."${RCol}
     sudo make install
-    sudo ldconfig
+
+    if [ ${TRAVIS_OS_NAME} == "linux" ]; then
+	sudo ldconfig
+    fi
 )
 
 # Build and test zmqpp
