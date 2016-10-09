@@ -41,6 +41,7 @@ install:
 
   # Install dependencies for OS X
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install gnu-sed --with-default-names; fi
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install libtool; fi
 
 script:
   - ./travis.sh
