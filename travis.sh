@@ -11,7 +11,7 @@ if [ -n ${WITH_LIBSODIUM} ]; then
     (
 	cd libsodium;
 	./autogen.sh
-	./configure
+	CXXCPP=/usr/bin/cpp ./configure
 	make check || echo ${Red}"Warning: Libsodium tests failed. The build will continue but may fail."${RCol}
 	sudo make install
 
@@ -27,9 +27,9 @@ git clone git://github.com/zeromq/${ZMQ_REPO}.git;
     cd ${ZMQ_REPO}
     ./autogen.sh
     if [ -n ${WITH_LIBSODIUM} ]; then
-	./configure --with-libsodium
+	CXXCPP=/usr/bin/cpp ./configure --with-libsodium
     else
-	./configure
+	CXXCPP=/usr/bin/cpp ./configure
     fi
     make check || echo ${Red}"Warning: ZeroMQ tests failed. The build will continue but may fail."${RCol}
     sudo make install
