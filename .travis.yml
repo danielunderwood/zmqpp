@@ -11,15 +11,8 @@ compiler:
   - clang
 
 env:
-  - ZMQ_REPO=zeromq3-x BUILD_TYPE=default
-  - ZMQ_REPO=zeromq4-x BUILD_TYPE=default WITH_LIBSODIUM=1
-  - ZMQ_REPO=zeromq4-1 BUILD_TYPE=default WITH_LIBSODIUM=1
   - ZMQ_REPO=libzmq    BUILD_TYPE=default WITH_LIBSODIUM=1
 
-  - ZMQ_REPO=zeromq3-x BUILD_TYPE=cmake
-  - ZMQ_REPO=zeromq4-x BUILD_TYPE=cmake WITH_LIBSODIUM=1
-  - ZMQ_REPO=zeromq4-1 BUILD_TYPE=cmake WITH_LIBSODIUM=1
-  - ZMQ_REPO=libzmq    BUILD_TYPE=cmake WITH_LIBSODIUM=1
 
 before_install:
   # Linux pre-install
