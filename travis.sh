@@ -6,7 +6,7 @@ RCol='\e[0m' # Text Reset
 Red='\e[0;31m';
 
 # C Preprocessor
-CPP=$(which cpp)
+CPP=/usr/bin/cpp
 
 # Install libsodium is required
 if [ -n ${WITH_LIBSODIUM} ]; then
