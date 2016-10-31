@@ -8,7 +8,6 @@ os:
 
 compiler:
   - g++
-  - clang
 
 env:
   - ZMQ_REPO=libzmq    BUILD_TYPE=default WITH_LIBSODIUM=1
