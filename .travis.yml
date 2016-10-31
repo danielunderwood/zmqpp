@@ -44,8 +44,5 @@ install:
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install libtool; fi
   - if [ "$TRAVIS_OS_NAME" == "osx" && "$CXX" == "g++" ]; then brew install gcc; fi
 
-  # Link g++ to /usr/bin/cpp on OS X
-  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then ln -s /usr/bin/g++ /usr/bin/cpp; fi
-
 script:
   - ./travis.sh
