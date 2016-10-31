@@ -34,7 +34,8 @@ install:
   # Install dependencies for OS X
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install gnu-sed --with-default-names; fi
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install libtool; fi
-  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then export CC=gcc-4.8; export CXX=g++-4.8; fi
+  - if [ "$TRAVIS_OS_NAME" == "osx" ] && [ "$CXX" == "g++" ]; then brew install gcc-4.8; fi
+  - if [ "$TRAVIS_OS_NAME" == "osx" ] && [ "$CXX" == "g++" ]; then export CC=gcc-4.8; export CXX=g++-4.8; fi
 
 script:
   - ./travis.sh
